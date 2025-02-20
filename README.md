@@ -50,14 +50,13 @@ docker exec -it id /bin/bash # log on to container vm for troubleshooting
 # update versioning of software
 docker-compose -f docker-compose.yml -p greenbone-community-edtion pull 
 
-#update feeds
-#Create vm snapshot first cause if done wrong volumes can screw up
+# update feeds
 You must run down command
 Then:
 docker-compose -f ~/greenbone-community-container/docker-compose.yml -p greenbone-community-edtion pull notus-data vulnerability-tests scap-data cert-bund-data report-formats data-objects
 Then run up command
 
-logs:
+# logs:
 docker-compose -f ~/greenbone-community-container/docker-compose.yml -p greenbone-community-edtion logs -f
 
 docker-compose -f ~/greenbone-community-container/docker-compose.yml -p greenbone-community-edtion down notus-data vulnerability-tests scap-data cert-bund-data report-formats data-objects
